@@ -1,0 +1,9 @@
+<resources>
+
+    <dimen name="image_size">160dp</dimen>
+    <dimen name="margin_small">10dp</dimen>
+    <dimen name="margin_medium">20dp</dimen>
+    <dimen name="margin_large">100dp</dimen>
+    <dimen name="textsize_medium">30dp</dimen>
+
+</resources>

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">PaykunSdkSandboxDemo</string>
+
+    <string name="stationery">Stationery</string>
+    <string name="total_transaction_amount">Total Transaction Amount</string>
+    <string name="pay_now">Pay Now</string>
+    <string name="secure_payment_by_paykun">Secure payment by Paykun</string>
+</resources>
