@@ -20,6 +20,7 @@ import org.greenrobot.eventbus.ThreadMode;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+/* this is main activity */
 public class MainActivity extends Activity {
 
     Button btnPurchase;
