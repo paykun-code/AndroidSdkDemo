@@ -24,8 +24,8 @@ import org.json.JSONObject;
 public class MainActivity extends Activity {
 
     Button btnPurchase;
-    private String merchantIdTest="357851063624213"; // merchant id for sandbox mode
-    private String accessTokenTest="297E1CBBD172DA76325163469CB8D1EA"; // access token for sandbox
+    private String merchantIdTest="369364134701831"; // merchant id for sandbox mode
+    private String accessTokenTest="DC4292FB5CCC18EBEDD300FA986C2A1F"; // access token for sandbox
     private String customerName="Bhavik",customerPhone="8256400020",customerEmail="bhavik.makvana@paykun.com";
     private String productName="Paykun Test Product",orderNo="7895812590123",amount="10";
     @Override
