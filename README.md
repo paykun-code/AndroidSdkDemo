@@ -4,14 +4,14 @@ you can make payment from your android application for both live and testing(san
 
 Below is guide to implement paykun sdk into your app.
 
-	How to install SDK in your app?
+#	How to install SDK in your app?
 
 We have distributed our SDK via Maven Central Repositery.You can add paykun sdk directly to your build.gradle file in dependency section using below line:
 
 implementation 'com.paykun.sdk:paykun-checkout-lib:1.0.5'	
 
 
-	How to implement SDK into your android app?
+#	How to implement SDK into your android app?
 
 First you need to get your merchant id and access token from paykun dashboard.for testing purpose you need to login in paykun dashboard using sandbox mode and get your merchant Id and access token.
 
@@ -20,7 +20,7 @@ You need to pass merchant id,access token,customer name,customer email,customer 
 Create json object with following key and values.
 
 
-	For testing environment(sandbox)
+#	For testing environment(sandbox)
 
 If you need it for testing purpose you can use our sandbox mode by sending “isLive” parameter to false.when you send “isLive” to false we will consider it as for testing purpose and will not charge for it otherwise sent it as true.
 If you need it for testing purpose you should login in pykun dashboard using sandbox mode and get your testing merchant Id and Device Api key(access token).
@@ -37,9 +37,11 @@ Note: Remember that you can login in Sandbox account from your Live account.
 
 you can use testing card no ”4111 1111 1111 1111 ” ,any future expiry date and any valid cvv no.
 
-Pass created json object to SDK using follwing method.
+# Pass created json object to SDK using follwing method.
 
-new PaykunApiCall.Builder(activity).sendJsonObject(object);	                                     we have used Event Bus to receive the result from sdk after or during the checkout process.so kindly follow below step to receive result.
+new PaykunApiCall.Builder(activity).sendJsonObject(object);	                                     
+
+we have used Event Bus to receive the result from sdk after or during the checkout process.so kindly follow below step to receive result.
 
 You need to register subscriber in the event bus with register().
 
@@ -47,31 +49,39 @@ You also need to unregister subscriber in onStop() method of activity lifecycle
 
 Implement the getResult() to listen the event from SDK with following way.
 
-Toast.makeText(MainActivity.this, "Your Transaction is succeed with transaction id : "
-+message.getTransactionId(), Toast.LENGTH_SHORT).show();
-}
-}
-else if(message.getResults().equalsIgnoreCase(PaykunHelper.MESSAGE_FAILED)){
-// do your stuff here
-Toast.makeText(MainActivity.this,"Your Transaction is failed", Toast.LENGTH_SHORT).show();
-}
-else if(message.getResults().equalsIgnoreCase(PaykunHelper.MESSAGE_SERVER_ISSUE
-)){
-// do your stuff here
+@Subscribe(sticky = true, threadMode = ThreadMode.MAIN) 
+public void getResults(Events.PaymentMessage message) {
+    if(message.getResults().equalsIgnoreCase(PaykunHelper.MESSAGE_SUCCESS)){
+      // do your stuff here
+      // message.getTransactionId() will return your failed or succeed transaction id
+      if(!TextUtils.isEmpty(message.getTransactionId())) {
 
-Toast.makeText(MainActivity.this,PaykunHelper.MESSAGE_SERVER_ISSUE,Toast.L ENGTH_SHORT).show();
-}else if(message.getResults().equalsIgnoreCase(PaykunHelper.MESSAGE_ACCESS_TOKEN
-_MISSING)){
-// do your stuff here Toast.makeText(MainActivity.this,"Access Token
-missing",Toast.LENGTH_SHORT).show();
-}
-else if(message.getResults().equalsIgnoreCase(PaykunHelper.MESSAGE_MERCHANT_ID_ MISSING)){
-// do your stuff here Toast.makeText(MainActivity.this,"Merchant Id is
-missing",Toast.LENGTH_SHORT).show();
-}
-else if(message.getResults().equalsIgnoreCase(PaykunHelper.MESSAGE_INVALID_REQU EST)){
-Toast.makeText(MainActivity.this,"Invalid Request",Toast.LENGTH_SHORT).show();
-}
+        Toast.makeText(MainActivity.this, "Your Transaction is succeed with transaction id : "+message.getTransactionId(),                       Toast.LENGTH_SHORT).show();
+      }
+    }
+    else if(message.getResults().equalsIgnoreCase(PaykunHelper.MESSAGE_FAILED)){
+        // do your stuff here
+        Toast.makeText(MainActivity.this,"Your Transaction is failed", Toast.LENGTH_SHORT).show();
+    }
+    else if(message.getResults().equalsIgnoreCase(PaykunHelper.MESSAGE_SERVER_ISSUE)){
+        // do your stuff here
+
+        Toast.makeText(MainActivity.this,PaykunHelper.MESSAGE_SERVER_ISSUE,Toast.L ENGTH_SHORT).show();
+    }
+    else if(message.getResults().equalsIgnoreCase(PaykunHelper.MESSAGE_ACCESS_TOKEN_MISSING)){
+    
+        // do your stuff here 
+        Toast.makeText(MainActivity.this,"Access Tokenmissing",Toast.LENGTH_SHORT).show();
+    }
+    else if(message.getResults().equalsIgnoreCase(PaykunHelper.MESSAGE_MERCHANT_ID_ MISSING)){
+    
+        // do your stuff here 
+        Toast.makeText(MainActivity.this,"Merchant Id ismissing",Toast.LENGTH_SHORT).show();
+    }
+    else if(message.getResults().equalsIgnoreCase(PaykunHelper.MESSAGE_INVALID_REQU EST)){
+    
+        Toast.makeText(MainActivity.this,"Invalid Request",Toast.LENGTH_SHORT).show();
+    }
 }
 
 
