@@ -59,7 +59,7 @@ You have to register and unregister GlobalBus in you actvitiy or fragment class 
     }
    
 Another step is to Subscribe getResult method by following way.
-
+    @Subscribe(sticky = true, threadMode = ThreadMode.MAIN)
     public void getResults(Events.PaymentMessage message) {
         if(message.getResults().equalsIgnoreCase(PaykunHelper.MESSAGE_SUCCESS)){
             // do your stuff here
