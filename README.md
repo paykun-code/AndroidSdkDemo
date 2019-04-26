@@ -40,3 +40,5 @@ you can use testing card no ”4111 1111 1111 1111 ” ,any future expiry date a
 #	For Live environment
 
 If you want to do real transaction than set "isLive" parameter to true and use your Live MerchantId and AccessToken from Paykun dashboard.
+
+#	Getting result after successfull or failed transaction in your Android Class or Activity
