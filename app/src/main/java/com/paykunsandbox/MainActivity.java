@@ -6,14 +6,15 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.paykun.sdk.Events;
-import com.paykun.sdk.GlobalBus;
 import com.paykun.sdk.PaykunApiCall;
-import com.paykun.sdk.PaykunHelper;
+import com.paykun.sdk.eventbus.Events;
+import com.paykun.sdk.eventbus.GlobalBus;
+import com.paykun.sdk.helper.PaykunHelper;
 
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
@@ -60,8 +61,12 @@ public class MainActivity extends Activity {
         if(message.getResults().equalsIgnoreCase(PaykunHelper.MESSAGE_SUCCESS)){
             // do your stuff here
             // message.getTransactionId() will return your failed or succeed transaction id
+            /* if you want to get your transaction detail call message.getTransactionDetail()
+            *  getTransactionDetail return all the field from server and you can use it here as per your need
+            *  For Example you want to get Order id from detail use message.getTransactionDetail().order.orderId */
             if(!TextUtils.isEmpty(message.getTransactionId())) {
-                Toast.makeText(MainActivity.this, "Your Transaction is succeed with transaction id : "+message.getTransactionId(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Your Transaction is succeed with transaction id : "+message.getTransactionId() , Toast.LENGTH_SHORT).show();
+                Log.v(" order id "," getting order id value : "+message.getTransactionDetail().order.orderId);
             }
         }
         else if(message.getResults().equalsIgnoreCase(PaykunHelper.MESSAGE_FAILED)){
