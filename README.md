@@ -66,7 +66,9 @@ Another step is to Subscribe getResult method by following way.
             // do your stuff here
             // message.getTransactionId() will return your failed or succeed transaction id
             /* if you want to get your transaction detail call message.getTransactionDetail()
-            *  getTransactionDetail return all the field from server and you can use it here as per your need */
+            *  getTransactionDetail return all the field from server and you can use it here as per your need
+            *  For Example you want to get Order id from detail use message.getTransactionDetail().order.orderId */
+            
             if(!TextUtils.isEmpty(message.getTransactionId())) {
                 Toast.makeText(MainActivity.this, "Your Transaction is succeed with transaction id : "+message.getTransactionId(),                       Toast.LENGTH_SHORT).show();
             }
