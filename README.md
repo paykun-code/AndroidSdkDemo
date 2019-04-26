@@ -36,3 +36,7 @@ Kindly follow below step in paykun dashboard to create your sandbox account from
 Note: Remember that you can login in Sandbox account from your Live account.
 
 you can use testing card no ”4111 1111 1111 1111 ” ,any future expiry date and any valid cvv no.
+
+#	For Live environment
+
+If you want to do real transaction than set "isLive" parameter to true and use your Live MerchantId and AccessToken from Paykun dashboard.
