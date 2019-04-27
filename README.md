@@ -23,7 +23,7 @@ Create json object with following key and values.
 #	For testing environment(sandbox)
 
 If you need it for testing purpose you can use our sandbox mode by sending “isLive” parameter to false.when you send “isLive” to false we will consider it as for testing purpose and will not charge for it otherwise sent it as true.
-If you need it for testing purpose you should login in pykun dashboard using sandbox mode and get your testing merchant Id and Device Api key(access token).
+If you need it for testing purpose you should login in paykun dashboard using sandbox mode and get your testing merchant Id and Device Api key(access token).
 Kindly follow below step in paykun dashboard to create your sandbox account from live account.
 
 1.	Go to Merchant account(Live)
