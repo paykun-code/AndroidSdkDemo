@@ -28,7 +28,7 @@ Kindly follow below step in paykun dashboard to create your sandbox account from
 
 1.	Go to Merchant account(Live)
 2.	Navigate to Account drop down(Top Right corner) and select "Test Mode"
-3.	Select "Activate Sandbox Account" to activate your sandbox account
+3.	Select "Generate Sandbox Account" to activate your sandbox account
 4.	After activating sandbox account,you can click on "Sandbox Login" button to go to sandbox dashboard and use generated username and password login.
 5.	Now you have to generate your Device API key from sandbox account from Setting-Security tab.
 6.	You can get you Merchant Id clicking on profile icon from top right corner.
