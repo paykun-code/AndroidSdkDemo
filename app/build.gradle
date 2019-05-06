@@ -3,7 +3,8 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.paykunsandbox"
+        //applicationId "com.paykunsandbox" // to test sandbox envirnment
+        applicationId "com.paykunsandbox.live" // to test live envirnment
         minSdkVersion 15
         targetSdkVersion 28
         versionCode 1

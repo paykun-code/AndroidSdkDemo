@@ -25,8 +25,13 @@ import org.json.JSONObject;
 public class MainActivity extends Activity {
 
     Button btnPurchase;
-    private String merchantIdTest="369364134701831"; // merchant id for sandbox mode
-    private String accessTokenTest="DC4292FB5CCC18EBEDD300FA986C2A1F"; // access token for sandbox
+
+    private String merchantIdLive="710730426562225"; // merchant id for live mode package name = com.paykunsandbox.live
+    private String accessTokenLive="6E51763DF010B981F214533F294D2A0C"; // access token for live mode package name = com.paykunsandbox.live
+
+    private String merchantIdSandbox="369364134701831"; // merchant id for sandbox mode
+    private String accessTokenSandbox="DC4292FB5CCC18EBEDD300FA986C2A1F"; // access token for sandbox
+
     private String customerName="Bhavik",customerPhone="8256400020",customerEmail="bhavik.makvana@paykun.com";
     private String productName="Paykun Test Product",orderNo="7895812590123",amount="10";
     @Override
@@ -40,15 +45,15 @@ public class MainActivity extends Activity {
             public void onClick(View v) {
                 JSONObject object = new JSONObject();
                 try {
-                    object.put("merchant_id",merchantIdTest);
-                    object.put("access_token",accessTokenTest);
+                    object.put("merchant_id",merchantIdLive);
+                    object.put("access_token",accessTokenLive);
                     object.put("customer_name",customerName);
                     object.put("customer_email",customerEmail);
                     object.put("customer_phone",customerPhone);
                     object.put("product_name",productName);
                     object.put("order_no",System.currentTimeMillis()); // order no. should have 10 to 30 character in numeric format
                     object.put("amount",amount);  // minimum amount should be 10
-                    object.put("isLive",false); // need to send false if you are in sandbox mode
+                    object.put("isLive",true); // need to send false if you are in sandbox mode
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
