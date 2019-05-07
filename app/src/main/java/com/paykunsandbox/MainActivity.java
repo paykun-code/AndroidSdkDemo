@@ -92,6 +92,9 @@ public class MainActivity extends Activity {
         else if(message.getResults().equalsIgnoreCase(PaykunHelper.MESSAGE_INVALID_REQUEST)){
             Toast.makeText(MainActivity.this,"Invalid Request",Toast.LENGTH_SHORT).show();
         }
+        else if(message.getResults().equalsIgnoreCase(PaykunHelper.MESSAGE_NETWORK_NOT_AVAILABLE)){
+            Toast.makeText(MainActivity.this,"Network is not available",Toast.LENGTH_SHORT).show();
+        }
     }
     @Override
     protected void onStart() {

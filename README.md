@@ -8,7 +8,7 @@ Below is guide to implement paykun sdk into your app.
 
 We have distributed our SDK via Maven Central Repositery.You can add our latest paykun sdk directly to your build.gradle file in dependency section using below line:
 
-implementation 'com.paykun.sdk:paykun-checkout-lib:1.1.1'	
+implementation 'com.paykun.sdk:paykun-checkout-lib:1.1.2'
 
 
 #	How to implement SDK into your android app?
@@ -70,7 +70,8 @@ Another step is to Subscribe getResult method by following way.
             *  For Example you want to get Order id from detail use message.getTransactionDetail().order.orderId */
             
             if(!TextUtils.isEmpty(message.getTransactionId())) {
-                Toast.makeText(MainActivity.this, "Your Transaction is succeed with transaction id : "+message.getTransactionId(),                       Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Your Transaction is succeed with transaction id : "+message.getTransactionId(),
+                Toast.LENGTH_SHORT).show();
             }
         }
         else if(message.getResults().equalsIgnoreCase(PaykunHelper.MESSAGE_FAILED)){
@@ -90,5 +91,8 @@ Another step is to Subscribe getResult method by following way.
         }
         else if(message.getResults().equalsIgnoreCase(PaykunHelper.MESSAGE_INVALID_REQUEST)){
             Toast.makeText(MainActivity.this,"Invalid Request",Toast.LENGTH_SHORT).show();
+        }
+        else if(message.getResults().equalsIgnoreCase(PaykunHelper.MESSAGE_NETWORK_NOT_AVAILABLE)){
+            Toast.makeText(MainActivity.this,"Network is not available",Toast.LENGTH_SHORT).show();
         }
     }
