@@ -8,7 +8,7 @@ Below is guide to implement paykun sdk into your app.
 
 We have distributed our SDK via Maven Central Repositery.You can add our latest paykun sdk directly to your build.gradle file in dependency section using below line:
 
-implementation 'com.paykun.sdk:paykun-checkout-lib:1.1.2'
+implementation 'com.paykun.sdk:paykun-checkout-lib:1.1.4'
 
 
 #	How to implement SDK into your android app?
