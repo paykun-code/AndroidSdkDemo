@@ -16,6 +16,7 @@ implementation 'com.paykun.sdk:paykun-checkout-lib:1.1.4'
 First you need to get your merchant id and access token from paykun dashboard.for testing purpose you need to login in paykun dashboard using sandbox mode and get your merchant Id and access token.
 
 You need to pass merchant id,access token,customer name,customer email,customer phone,product name,order no and amount to SDK.
+Remember that Order Number should be always unique.duplicate Order Number will cause invalid request.
 
 Create json object with following key and values.
 
