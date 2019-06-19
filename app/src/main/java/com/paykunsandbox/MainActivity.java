@@ -45,15 +45,15 @@ public class MainActivity extends Activity {
             public void onClick(View v) {
                 JSONObject object = new JSONObject();
                 try {
-                    object.put("merchant_id",merchantIdLive);
-                    object.put("access_token",accessTokenLive);
+                    object.put("merchant_id",merchantIdSandbox);
+                    object.put("access_token",accessTokenSandbox);
                     object.put("customer_name",customerName);
                     object.put("customer_email",customerEmail);
                     object.put("customer_phone",customerPhone);
                     object.put("product_name",productName);
                     object.put("order_no",System.currentTimeMillis()); // order no. should have 10 to 30 character in numeric format
                     object.put("amount",amount);  // minimum amount should be 10
-                    object.put("isLive",true); // need to send false if you are in sandbox mode
+                    object.put("isLive",false); // need to send false if you are in sandbox mode
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
