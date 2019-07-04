@@ -8,7 +8,7 @@ Below is guide to implement paykun sdk into your app.
 
 We have distributed our SDK via Maven Central Repositery.You can add our latest paykun sdk directly to your build.gradle file in dependency section using below line:
 
-implementation 'com.paykun.sdk:paykun-checkout-lib:1.1.4'
+implementation 'com.paykun.sdk:paykun-checkout-lib:1.1.6'
 
 
 #	How to implement SDK into your android app?
@@ -26,6 +26,9 @@ Create json object with following key and values.
 If you need it for testing purpose you can use our sandbox mode by sending “isLive” parameter to false.when you send “isLive” to false we will consider it as for testing purpose and will not charge for it otherwise sent it as true.
 If you need it for testing purpose you should login in paykun dashboard using sandbox mode and get your testing merchant Id and Device Api key(access token).
 Kindly follow below step in paykun dashboard to create your sandbox account from live account.
+
+also change applicationId from build.gradle file to "com.paykunsandbox" for testing purpose and for production use applicationId
+"com.paykunsandbox.live".
 
 1.	Go to Merchant account(Live)
 2.	Navigate to Account drop down(Top Right corner) and select "Test Mode"
