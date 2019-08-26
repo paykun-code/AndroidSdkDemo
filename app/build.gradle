@@ -17,12 +17,12 @@ repositories {
 
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 29
     defaultConfig {
-        applicationId "com.paykunsandbox" // to test sandbox envirnment
+        applicationId "com.testpaykun" // to test sandbox envirnment
         //applicationId "com.paykunsandbox.live" // to test live envirnment
         minSdkVersion 15
-        targetSdkVersion 28
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -42,6 +42,6 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    implementation 'com.paykun.sdk:paykun-checkout-lib:1.1.6'
+    implementation 'com.paykun.sdk:paykun-checkout-lib:1.1.8'
     implementation 'com.crashlytics.sdk.android:crashlytics:2.10.1'
 }
