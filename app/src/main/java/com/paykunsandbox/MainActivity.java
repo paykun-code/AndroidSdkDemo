@@ -26,11 +26,11 @@ public class MainActivity extends Activity {
 
     Button btnPurchase;
 
-    private String merchantIdLive="710730426562225"; // merchant id for live mode package name = com.paykunsandbox.live
-    private String accessTokenLive="6E51763DF010B981F214533F294D2A0C"; // access token for live mode package name = com.paykunsandbox.live
+    private String merchantIdLive="710730426562225"; // merchant id for live mode application id  = com.paykunsandbox.live
+    private String accessTokenLive="6E51763DF010B981F214533F294D2A0C"; // access token for live mode application id  = com.paykunsandbox.live
 
-    private String merchantIdSandbox="369364134701831"; // merchant id for sandbox mode
-    private String accessTokenSandbox="DC4292FB5CCC18EBEDD300FA986C2A1F"; // access token for sandbox
+    private String merchantIdSandbox="895775588965854"; // merchant id for sandbox mode application id = com.paykun.sandbox
+    private String accessTokenSandbox="74B92BC0C039D9AD7D02FA4993253E8B"; // access token for sandbox application id = com.paykun.sandbox
 
     private String customerName="Bhavik",customerPhone="8256400020",customerEmail="bhavik.makvana@paykun.com";
     private String productName="Paykun Test Product",orderNo="7895812590123",amount="10";
