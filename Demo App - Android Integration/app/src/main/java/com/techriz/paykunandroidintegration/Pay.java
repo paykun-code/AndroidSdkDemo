@@ -51,8 +51,8 @@ public class Pay extends AppCompatActivity {
 
                     JSONObject object = new JSONObject();
                     try {
-                        object.put("merchant_id","752386476371159");
-                        object.put("access_token","0D0D3F7A895E4661EBF3560B28222D0E");
+                        object.put("merchant_id",merchantIdSandbox);
+                        object.put("access_token",accessTokenSandbox);
                         object.put("customer_name",name.getText().toString());
                         object.put("customer_email",email.getText().toString());
                         object.put("customer_phone",mobno.getText().toString());
