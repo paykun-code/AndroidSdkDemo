@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#1a8fef</color>
+    <color name="colorPrimaryDark">#0062bc</color>
+    <color name="colorAccent">#0062bc</color>
+    <color name="white">#ffffff</color>
+    <color name="blafck">#000</color>
+    <color name="bluee">#00C1FF</color>
+    <color name="dark">#919191</color>
+    <color name="actionBar">#ffffff</color>
+    <color name="header">#fff</color>
+
+    <!--Colors used in commands-->
+
+    <color name="orange">#FF8B25</color>
+    <color name="blue">#299AD4</color>
+    <color name="red">#EE0F0F</color>
+    <color name="green">#2DEE0F</color>
+    <color name="purple">#740CEB</color>
+    <color name="black">#383838</color>
+
+    <color name="toolbarColor">@color/colorPrimary</color>
+    <color name="primaryTextColor">#555555</color>
+    <color name="primaryTextColorDark">#000</color>
+    <color name="grey_semitransparent">#c8303030</color>
+    <color name="cardBackgroundColor">#ffffff</color>
+    <color name="dividerColor">#dedede</color>
+    <color name="btnTextColor">@color/colorPrimary</color>
+    <color name="mainBackground">#ffffff</color>
+
+    <!--<color name="navDrawerBackground">@color/md_white_1000</color>-->
+
+    <color name="colorPostPrimary">#E91E63</color>
+    <color name="colorPostPrimaryDark">#C2185B</color>
+    <color name="colorPostAccent">#546E7A</color>
+
+    <color name="ubuntu">#FF8B25</color>
+    <color name="debian">#D70751</color>
+    <color name="manjaro">#34BE5B</color>
+
+</resources>
