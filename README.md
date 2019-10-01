@@ -1,30 +1,29 @@
-# AndroidSdkDemo
-this is sample demo which guide to implement Paykun sdk into you own application
-you can make payment from your android application for both live and testing(sandbox) purpose.
 
-Below is guide to implement paykun sdk into your app.
+# How to integrate Paykun in an Android app?
+
+Integrating Paykun payment gateway and payment links in an Android app is just a matter of 10 minutes. Add the SDK, add some code and you're good to go! To help you we have a YouTube tutorial [here](https://youtu.be/j9ZQhz-laaM)
 
 #	How to install SDK in your app?
 
-We have distributed our SDK via Maven Central Repositery.You can add our latest paykun sdk directly to your build.gradle file in dependency section using below line:
+We have distributed our SDK via Maven Central Repositery. You can add our latest paykun SDK directly to your build.gradle file in dependency section using below line:
 
-implementation 'com.paykun.sdk:paykun-checkout-lib:1.1.13'
+**implementation 'com.paykun.sdk:paykun-checkout-lib:1.1.13'**
 
 
 #	How to implement SDK into your android app?
 
-First you need to get your merchant id and access token from paykun dashboard.for testing purpose you need to login in paykun dashboard using sandbox mode and get your merchant Id and access token.
+First you need to get your merchant id and access token from Paykun dashboard.for testing purpose you need to login in Paykun dashboard using sandbox mode and get your merchant Id and access token.
 
 You need to pass merchant id,access token,customer name,customer email,customer phone,product name,order no and amount to SDK.
 Remember that Order Number should be always unique.duplicate Order Number will cause invalid request.
 
-Create json object with following key and values.
+Create Json object with following key and values.
 
 
-#	For testing environment(sandbox)
+#	Test your Integration (sandbox)
 
 If you need it for testing purpose you can use our sandbox mode by sending “isLive” parameter to false.when you send “isLive” to false we will consider it as for testing purpose and will not charge for it otherwise sent it as true.
-If you need it for testing purpose you should login in paykun dashboard using sandbox mode and get your testing merchant Id and Device Api key(access token).
+If you need it for testing purpose you should login in Paykun dashboard using sandbox mode and get your testing merchant Id and Device API key(access token).
 Kindly follow below step in paykun dashboard to create your sandbox account from live account.
 
 also change applicationId from build.gradle file to "com.paykunsandbox" for testing purpose and for production use applicationId
@@ -39,7 +38,8 @@ also change applicationId from build.gradle file to "com.paykunsandbox" for test
 7.	Now you have to use this API key and Merchant Id in your Demo project for testing purpose.
 Note: Remember that you can login in Sandbox account from your Live account.
 
-you can use testing card no ”4111 1111 1111 1111 ” ,any future expiry date and any valid cvv no.
+> You can use testing card no ”4111 1111 1111 1111 ” ,any future expiry
+> date and any valid cvv no.
 
 #	For Live environment
 
@@ -47,7 +47,7 @@ If you want to do real transaction than set "isLive" parameter to true and use y
 
 #	Getting result after successfull or failed transaction in your Android Class or Activity
 
-You have to register and unregister GlobalBus in you actvitiy or fragment class by following way.
+You have to register and unregister GlobalBus in you activity or fragment class by following way.
 
     @Override
     protected void onStart() {
