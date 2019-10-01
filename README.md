@@ -1,7 +1,10 @@
 
+
 # How to integrate Paykun in an Android app?
 
 Integrating Paykun payment gateway and payment links in an Android app is just a matter of 10 minutes. Add the SDK, add some code and you're good to go! To help you we have a YouTube tutorial [here](https://youtu.be/j9ZQhz-laaM)
+
+Get the demo app from here - [Paykun Demo Android App](http://www.mediafire.com/file/0x5yoypi7eu9c6x/app-debug.apk/file)
 
 #	How to install SDK in your app?
 
